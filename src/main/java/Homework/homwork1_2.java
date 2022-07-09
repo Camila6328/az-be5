@@ -1,30 +1,20 @@
 package Homework;
 
 import java.io.BufferedReader;
+import java.util.Random;
 import java.util.Scanner;
 
 public class homwork1_2 {
-//
-//public static void main(String[]args){
-//        String[][] arr = {{"1914","1995"},{"WW1","ww2"}};
-//        System.out.println(arr[0][0]+"  "+arr[1][0]);
-//
-//        System.out.println(arr[0][1]+"  "+arr[1][1]);
-//
-//  }
-
         public static void main(String[] args) {
-                Scanner sc = new Scanner(System.in);
-                int n = 0;
-                while (n >= 0) {
-                        String s = sc.nextLine();
-                        try {
-                                n = Integer.parseInt(s);
+                String[][] arr = {{"1914","1939","1988","2020"},
+                        {"World War I", "World War II","First Nagorno-Karabakh War","The Second Karabakh War"}};
+                for(int i=0;i<arr.length;i++){
+                        for(int j=0;j<arr[i].length;j++){
+                                System.out.print(arr[i][j]+" ");
                         }
-                        catch(Exception e) {
-                                System.out.println("Try again");
-                        }
+                        System.out.println();
                 }
-
-                }
+                int rnd = new Random().nextInt(3);
+                System.out.println("When did the "+ arr[1][rnd] +" begin?" + " - " + arr[0][rnd]);
+        }
 }
