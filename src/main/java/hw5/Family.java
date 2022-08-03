@@ -1,20 +1,13 @@
 package hw5;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
-
 
 public class Family  {
     Human mother;
     Human father;
     Human[] children=new Human[]{};//1
     Pet pet;
-
-    public void deleteChild(Human child) {
-        System.out.println("Delete child from Family ");
-    }
-
 
     public Family(Human mother, Human father) {
         this.mother = mother;
@@ -23,12 +16,11 @@ public class Family  {
     public void addChild(Human child){
             Human[] a =this.children;
             this.children = new Human[this.children.length+1];
-        for (int i = 0; i < a.length; i++) {
-             this.children[i]=a[i];
-                }
+        System.arraycopy(a, 0, this.children, 0, a.length);
          this.children[a.length] = child;
     }
 
+    //Delete child from Family
     public boolean deleteChild(int index){
         Human[] arr = this.children;
         if (arr == null || index < 0 || index >= arr.length) {
@@ -47,8 +39,7 @@ public class Family  {
 
     public int countFamily() {
         Human [] arr = this.children;
-        int cnt = 2 + arr.length;
-        return cnt;
+        return 2 + arr.length;
     }
     public Family(Human mother, Human father, Human[] children) {
         this.mother = mother;
@@ -66,14 +57,6 @@ public class Family  {
         this.children = children;
         this.pet = pet;
     }
-
-//    public ArrayList<Human> addchild (Human child){
-//        //child = new Human(getName(),getSurname(),getYear(),getIq(),getSchedule());
-//        ArrayList<Human> listch = new ArrayList<Human>();
-//        listch.add(child);
-//        return listch;
-//    }
-
     @Override
     public String toString() {
         return "Family{" +

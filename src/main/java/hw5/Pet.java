@@ -1,7 +1,6 @@
 package hw5;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 public class Pet {
 
@@ -68,7 +67,7 @@ public class Pet {
         }
 
         // In class Pet create constructors:
-        //constructor which describes the pet's species an nickname
+        //constructor which describes the pet's species a nickname
         public Pet(String species, String nickname){
                 this.species = "undedined species";
                 this.nickname = "undefined nickname";

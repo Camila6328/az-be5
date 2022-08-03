@@ -1,7 +1,4 @@
 package hw5;
-
-import java.util.Arrays;
-
 public class runObj {
     // Driver Code
     public static void main(String[] args) {
@@ -25,14 +22,14 @@ public class runObj {
         int c = fm.countFamily();
         System.out.println("count of Family members = " + c);
 
-        //  In the Main class create several families, so that every class uses all the available constructors. Display data about every person.
-        //        String nc = pet.getNickname();
-        //        pet.greetPet(nc);
-        //        String sp = pet.getSpecies();
-        //        int catAge = pet.getAge();
-        //        int slyLevel = pet.getTrickLevel();
-        //        pet.describePet(slyLevel,sp,catAge);
-        //        System.out.println(pet);
+        /* In the Main class create several families, so that every class uses all the available constructors. Display data about every person.
+                String nc = pet.getNickname();
+                pet.greetPet(nc);
+                String sp = pet.getSpecies();
+                int catAge = pet.getAge();
+                int slyLevel = pet.getTrickLevel();
+                pet.describePet(slyLevel,sp,catAge);
+                System.out.println(pet); */
 
     }
 }
