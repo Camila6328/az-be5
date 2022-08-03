@@ -70,8 +70,7 @@ public class Family  {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Family)) return false;
-        Family family = (Family) o;
+        if (!(o instanceof Family family)) return false;
         return Objects.equals(getMother(), family.getMother()) && Objects.equals(getFather(), family.getFather()) && Objects.equals(getChildren(), family.getChildren()) && Objects.equals(getPet(), family.getPet());
     }
 

@@ -14,7 +14,7 @@ public class Pet {
                 System.out.println("I am eating");
         }
         public void respond(){
-                System.out.printf("Hello, owner. I am - [{%s}]. I miss you!",nickname,"\n");
+                System.out.printf("Hello, owner. I am - [{%s}]. I miss you!"+nickname+"\n");
 
         }
         public void foul(){
@@ -63,7 +63,7 @@ public class Pet {
                 String sly;
                 if(slyLevel>50){sly = "very sly";}
                 else {sly = "almost not sly";}
-                System.out.printf("I have a [%s], he is [%s] years old, he is [%s]",species,age,sly,"/n");
+                System.out.printf("I have a [%s], he is [%s] years old, he is [%s]"+species+age+sly+"/n");
         }
 
         // In class Pet create constructors:
