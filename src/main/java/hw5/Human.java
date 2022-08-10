@@ -2,11 +2,26 @@ package hw5;
 
 import java.util.Arrays;
 public class Human {
+
+    enum DayOfWeek{
+        Sunday,
+        Monday,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday
+    }
     String name;
     String surname;
     int year;
     int iq;
     String[][] schedule = new String[7][2];
+
+    @Override
+    protected void finalize() {
+        System.out.println("Finalize method is called for Human class");
+    }
 
     @Override
     public String toString() {
@@ -82,5 +97,6 @@ public class Human {
     //    empty constructor
     public Human(){
     }
+
 
 }

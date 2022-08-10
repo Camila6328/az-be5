@@ -3,12 +3,16 @@ package hw5;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Family  {
+public class Family  extends Human{
     Human mother;
     Human father;
     Human[] children=new Human[]{};//1
     Pet pet;
 
+    @Override
+    protected void finalize() {
+        super.finalize();
+    }
     public Family(Human mother, Human father) {
         this.mother = mother;
         this.father = father;
@@ -20,7 +24,27 @@ public class Family  {
          this.children[a.length] = child;
     }
 
-    //Delete child from Family
+
+
+    public boolean deleteChild(Human child1){
+        Human[] arr = this.children;
+        if (arr == null ||  this.children.length < 0 || this.children.length > arr.length){
+            return false;
+        }
+        Human[] anotherArray = new Human[arr.length - 1];
+
+        for (int i = 0, k = 0; i < anotherArray.length; i++) {
+            if (arr.hashCode()== child1.hashCode()) {
+                System.out.println("sucsess");
+                continue;
+            }
+            anotherArray[k++] = arr[i];
+        }
+        this.children = anotherArray;
+        return true;
+    }
+
+    //Delete child index from Family
     public boolean deleteChild(int index){
         Human[] arr = this.children;
         if (arr == null || index < 0 || index >= arr.length) {
@@ -71,7 +95,12 @@ public class Family  {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Family family)) return false;
-        return Objects.equals(getMother(), family.getMother()) && Objects.equals(getFather(), family.getFather()) && Objects.equals(getChildren(), family.getChildren()) && Objects.equals(getPet(), family.getPet());
+        Family fam = (Family) o;
+        System.out.println("ttt");
+        return Objects.equals(this.name, fam.name) && this.getName()==fam.getName()
+                && this.children==fam.children && this.countFamily()==fam.countFamily();
+      //  return true;
+              //Objects.equals(getMother(), family.getMother()) && Objects.equals(getFather(), family.getFather()) && Objects.equals(getChildren(), family.getChildren()) && Objects.equals(getPet(), family.getPet());
     }
 
     @Override
@@ -110,4 +139,5 @@ public class Family  {
     public void setPet(Pet pet) {
         this.pet = pet;
     }
+
 }

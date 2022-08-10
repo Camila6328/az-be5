@@ -10,8 +10,8 @@ public class StringApp {
 
         String str1 = "IBAtech";
         String str2 = "iBAtech";
-        String str3 = new String( "ibatech");
-        String str4 = new String( "ibatech");
+        String str3 = "ibatech";
+        String str4 = "ibatech";
 
 //        System.out.println(str1==str2);
 //        System.out.println(str1==str3);

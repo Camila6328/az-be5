@@ -9,14 +9,6 @@ public class Pet {
     int trickLevel; // (a whole number from 1 to 100)
     String[] habits ; // (array of strings)
 
-    public Pet(String species, String  nickname, int age, int trickLevel, String[] habits) {
-        this.species = species;
-        this.nickname = nickname;
-        this.age = age;
-        this.trickLevel = trickLevel;
-        this.habits = habits;
-    }
-
     public void eat(){
         System.out.println("I am eating");
     }
@@ -27,6 +19,7 @@ public class Pet {
     public void foul(){
         System.out.println("I need to cover it up'");
     }
+
     @Override
     public String toString() {
         return this.species + "{nickname=" + this.nickname + ", age=" + this.age + ", trickLevel=" + this.trickLevel  +
@@ -58,6 +51,19 @@ public class Pet {
         this.trickLevel = trickLevel;
     }
 
+    public void greetPet(String nickname){
+        System.out.printf("Hello, [%s]",nickname,"/n");
+        System.out.println();
+    }
+
+    //  (describePet): (display the information about your pet:
+    //  "I have a [species], he is [age] years old, he is [very sly]>50/[almost not sly]<50".
+    public void describePet(int slyLevel, String species, int age){
+        String sly;
+        if(slyLevel>50){sly = "very sly";}
+        else {sly = "almost not sly";}
+        System.out.printf("I have a [%s], he is [%s] years old, he is [%s]",species,age,sly,"/n");
+    }
     // In class Pet create constructors:
     //constructor which describes the pet's species an nickname
     public Pet(String species, String nickname){
@@ -65,19 +71,16 @@ public class Pet {
         this.nickname = "undefined nickname";
     }
     //constructor which describes all the fields for the pet
-    public Pet (String species, String nickname, String age, int trickLevel , String[] habits){
-        this.species = "undedined species";
-        this.nickname = "undefined nickname";
-        this.age = -1;
-        this.trickLevel = 0;
-        this.habits = new String[]{};
+    public Pet(String species, String  nickname, int age, int trickLevel, String[] habits) {
+        this.species = species;
+        this.nickname = nickname;
+        this.age = age;
+        this.trickLevel = trickLevel;
+        this.habits = habits;
     }
     //empty constructor
     public Pet(){
-
     }
-
-
 
 }
 

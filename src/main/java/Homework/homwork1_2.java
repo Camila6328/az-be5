@@ -1,18 +1,86 @@
 package Homework;
+import java.util.Arrays;
 import java.util.Random;
-
+import java.util.Scanner;
 public class homwork1_2 {
         public static void main(String[] args) {
-                String[][] arr = {{"1914","1939","1988","2020"},
-                                        {"World War I", "World War II","First Nagorno-Karabakh War","The Second Karabakh War"}};
-//                for(int i=0;i<arr.length;i++){
-//                        for(int j=0;j<arr[i].length;j++){
-//                                System.out.print(arr[i][j]+" ");
-//                        }
-//                        System.out.println();
-//                }
-                System.out.println();
-                int rnd = new Random().nextInt(3);
-                System.out.println("When did the "+ arr[1][rnd] +" begin?" + " - " + arr[0][rnd]);
+                Scanner sc = new Scanner(System.in);
+                String[][] schedule = new String[7][2];
+                int arr_ind = 0;
+                String task ="";
+                while(true) {
+                        String day = sc.nextLine().toUpperCase().trim();
+                        System.out.println(day);
+                        if (day.equals("EXIT" ) ) {
+                                System.out.println("The program goes out of the loop");
+                                // ind=false;
+                                break;
+                        }
+                        else{    switch (day) {
+                                        case "MONDAY":
+                                                task = "go to work";
+                                                System.out.printf("Your tasks for {%s},{%s}!", day, task);
+                                                System.out.println();
+                                                schedule[arr_ind] = new String[]{day, task};
+                                                arr_ind++;
+                                                break;
+                                        case "TUESDAY":
+                                                task = "go to work and  watch a film";
+                                                System.out.printf("Your tasks for {%s},{%s}!", day, task);
+                                                System.out.println();
+                                                schedule[arr_ind] = new String[]{day, task};
+                                                arr_ind++;
+                                                // System.out.println("Tuesday");
+                                                break;
+                                        case "WEDNESDAY":
+                                                task = "go sport";
+                                                System.out.printf("Your tasks for {%s},{%s}!", day, task);
+                                                System.out.println();
+                                                schedule[arr_ind] = new String[]{day, task};
+                                                arr_ind++;
+                                                break;
+                                        case "THURSDAY":
+                                                task = "go to course";
+                                                System.out.printf("Your tasks for {%s},{%s}!", day, task);
+                                                System.out.println();
+                                                schedule[arr_ind] = new String[]{day, task};
+                                                arr_ind++;
+                                                break;
+                                        case "FRIDAY":
+                                                task = "go to coffee shops";
+                                                System.out.printf("Your tasks for {%s},{%s}!", day, task);
+                                                System.out.println();
+                                                schedule[arr_ind] = new String[]{day, task};
+                                                arr_ind++;
+                                                break;
+                                        case "SATURDAY":
+                                                task = "go to language course";
+                                                System.out.printf("Your tasks for {%s},{%s}!", day, task);
+                                                System.out.println();
+                                                schedule[arr_ind] = new String[]{day, task};
+                                                arr_ind++;
+                                                break;
+                                        case "SUNDAY":
+                                                task = "weekend day";
+                                                System.out.printf("Your tasks for {%s},{%s}!", day, task);
+                                                System.out.println();
+                                                schedule[arr_ind] = new String[]{day, task};
+                                                arr_ind++;
+                                                break;
+                                        default:
+                                                System.out.println("Sorry, I don't understand you, please try again.");
+                                }
+                        }
+
+
+                }
+
+                for(int i = 0; i< 7;i++)
+                {
+                        System.out.println(Arrays.toString(schedule[i]));
+
+                }
+
+
         }
 }

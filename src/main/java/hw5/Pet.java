@@ -2,9 +2,27 @@ package hw5;
 
 import java.util.Arrays;
 
+@SuppressWarnings("removal")
 public class Pet {
+                /// Non-obligatory task with advanced complexity:
+        enum Species {
 
-        String species;
+                        dog(false, 4, true),
+                        cat(false, 4, true),
+                        bird(true, 2, false),
+                        fish(false, 0, false);
+                        private final boolean fly;
+                        private final int numberOfLegs;
+                        private final boolean hasFur;
+
+                        Species(boolean canFly, int numberOfLegs, boolean hasFur) {
+                                this.fly = canFly;
+                                this.numberOfLegs = numberOfLegs;
+                                this.hasFur = hasFur;
+                        }
+                }
+
+        Species species;
         String nickname;
         int age;
         int trickLevel; // (a whole number from 1 to 100)
@@ -24,13 +42,15 @@ public class Pet {
         @Override
         public String toString() {
                 return this.species + "{nickname=" + this.nickname + ", age=" + this.age + ", trickLevel=" + this.trickLevel  +
-                        ", habits=" + Arrays.toString(this.habits)  + "]";
+                        ", habits=" + Arrays.toString(this.habits)  + " canFly " + this.species.fly + " numberOfLegs "
+                        + this.species.numberOfLegs + " hasFur " + this.species.hasFur +
+                                "]";
                 //dog{nickname='Rock', age=5, trickLevel=75, habits=[eat, drink, sleep]}
         }
-        public String getSpecies(){
+        public Species getSpecies(){
                 return species;
         }
-        public void setSpecies (String species){
+        public void setSpecies (Species species){
                 this.species = species;
         }
         public String getNickname(){
@@ -68,12 +88,12 @@ public class Pet {
 
         // In class Pet create constructors:
         //constructor which describes the pet's species a nickname
-        public Pet(String species, String nickname){
-                this.species = "undedined species";
-                this.nickname = "undefined nickname";
+        public Pet(Species species, String nickname){
+                this.species = species;
+                this.nickname = nickname;
         }
         //constructor which describes all the fields for the pet
-        public Pet(String species, String  nickname, int age, int trickLevel, String[] habits) {
+        public Pet(Species species, String  nickname, int age, int trickLevel, String[] habits) {
                 this.species = species;
                 this.nickname = nickname;
                 this.age = age;
@@ -82,5 +102,10 @@ public class Pet {
         }
         //empty constructor
         public Pet(){
+        }
+
+        @Override
+        protected void finalize() {
+                System.out.println("Finalize method is called for Pet class");
         }
 }

@@ -7,11 +7,11 @@ public class homework1 {
     public static void main(String[] args) {
         System.out.println("homework part1");
         String name = "Jamila";
-        int arr[] = new int[100];
+        int[] arr = new int[100];
         Random rnd = new Random();
         int val = rnd.nextInt(100);
         Scanner sc = new Scanner(System.in);
-System.out.println(val);
+        System.out.println(val);
         System.out.println("Let the game begin!");
         int i=0;
         int num = 0;

@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class ArrayApp {
     public static void main(String[] args) {
         int[] ar1;
-        int ar2[];
+        int[] ar2;
         int []ar3;
         String []str = new String[10];
         byte [] arrByte = {53,44,55,1,2,3,4,7};

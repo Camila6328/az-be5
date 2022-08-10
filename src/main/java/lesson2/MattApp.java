@@ -25,4 +25,10 @@ public class MattApp {
         //        int power = 5^2;
         //        System.out.println("power = "+ power);
     }
+
+    static class Cat {
+        String name;
+      //  public Cat(String name){this.name }
+        static String format ="My name is %s";
+    }
 }
