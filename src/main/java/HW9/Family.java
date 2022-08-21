@@ -7,15 +7,30 @@ public class Family {
   Human father;
   Human[] children=new Human[]{};//1
   Set<Pet> pet;
+
   public Family(Human mother, Human father, Human[] children) { //
     this.mother = mother;
     this.father = father;
     this.children = children;
   }
-  public Family(Human mother, Human father) { //
+
+
+  public Family(Human mother, Human father,Human[] children,Set<Pet> pet) { //
     this.mother = mother;
     this.father = father;
     this.children = children;
+    this.pet = pet;
+  }
+
+  public Family(Human mother, Human father,Set<Pet>pet) { //
+    this.mother = mother;
+    this.father = father;
+    this.pet = pet;
+  }
+
+  public Family(Human mother, Human father) { //
+    this.mother = mother;
+    this.father = father;
   }
   @Override
   public String toString() {
@@ -23,7 +38,7 @@ public class Family {
             "mother=" + mother + "\n"+
             ", father=" + father + "\n"+
             ", children=" + Arrays.toString(children) + "\n"+
-           // ", pet=" + pet + "\n"+
+            ", pet=" + pet + "\n"+
             "} " ;//+ super.toString();
   }
 
