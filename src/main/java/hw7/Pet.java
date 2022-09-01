@@ -3,14 +3,12 @@ package hw7;
 import java.util.Arrays;
 
 public abstract class Pet {
-
     // In class Pet create constructors:
     public Pet(String nickname, int trickLevel, Species species) {
         this.nickname = nickname;
         this.trickLevel = trickLevel;
         this.species = species;
     }
-
     public Pet(String nickname, int trickLevel) {
         this.nickname = nickname;
         this.trickLevel = trickLevel;
@@ -40,7 +38,6 @@ public abstract class Pet {
         }
 
     }
-
     Species species;
         String nickname;
         int age;

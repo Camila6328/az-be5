@@ -1,5 +1,4 @@
-package HW9;
-import org.junit.Assert;
+package HW10;
 import org.junit.Test;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -15,6 +14,11 @@ public class RunObjectstestUnit {
         Human child1 = new Human("Camila", "Garayeva", 1993);
         Human child2 = new Human("Ulviyya", "Garayeva", 1990);
         Human child3 = new Human("Turana", "Garayeva", 1989);
+
+        Human father3 = new Human("Roman", "Zamanli", 1577094336);
+        Human father4 = new Human("Roman", "Zamanli", "02/04/2022", 44);
+
+
         List<Family>ls_fm = new ArrayList<>();
         Family fm = new Family(mother, father, new Human[]{});
         Set<Pet> pet = new HashSet<>();
@@ -27,18 +31,21 @@ public class RunObjectstestUnit {
         Family fm2 = new Family(father2,mother2,new Human[]{},pet2);
         @Test
         public void test(){
-                        fm.addChild(child1);
-                        fm.addChild(child2);
-                        fm.addChild(child3);
-                        pet.add(pt);
-                        pet2.add(pt2);
-                        habits.add("eat");
-                        habits.add("drink");
-                        habits.add("sleep");
-                        ls_fm.add(fm);
-                        ls_fm.add(fm1);
-                        ls_fm.add(fm2);
-          FamilyController s = new FamilyController();
+//                        fm.addChild(child1);
+//                        fm.addChild(child2);
+//                        fm.addChild(child3);
+//                        pet.add(pt);
+//                        pet2.add(pt2);
+//                        habits.add("eat");
+//                        habits.add("drink");
+//                        habits.add("sleep");
+//                        ls_fm.add(fm);
+//                        ls_fm.add(fm1);
+//                        ls_fm.add(fm2);
+            System.out.println(father3);
+            System.out.println(father3.describeAge(1220227200));
+            System.out.println(father4);
+      //    FamilyController s = new FamilyController();
 //        Family fm1 = new Family(mother1, father1,new Human[]{},);
 //        System.out.println(s.getAllFamilies(ls_fm));
 //        System.out.println(s.getFamilyByIndex(2,s.getAllFamilies(ls_fm)));
@@ -59,9 +66,9 @@ public class RunObjectstestUnit {
 //        System.out.println(s.getFamilyById(0,ls_fm));
 //        System.out.println(fm.children.length);
 //        System.out.println(s.getAllFamilies(ls_fm));
-          System.out.println(s.getPets(1,ls_fm));
-          System.out.println(s.addPet(2,pt2,ls_fm));
-          Assert.assertTrue(true);
+//          System.out.println(s.getPets(1,ls_fm));
+//          System.out.println(s.addPet(2,pt2,ls_fm));
+//          Assert.assertTrue(true);
 
     }
 

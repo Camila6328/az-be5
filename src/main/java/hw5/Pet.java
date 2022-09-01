@@ -79,9 +79,10 @@ public class Pet {
 
         //  (describePet): (display the information about your pet:
         //  "I have a [species], he is [age] years old, he is [very sly]>50/[almost not sly]<50".
-        public void describePet(int slyLevel, String species, int age){
-                String sly;
-                if(slyLevel>50){sly = "very sly";}
+        public void describePet(){
+                String sly ;
+                boolean slyLevel;
+                if(this.trickLevel>50){sly = "very sly";}
                 else {sly = "almost not sly";}
                 System.out.printf("I have a [%s], he is [%s] years old, he is [%s]"+species+age+sly+"/n");
         }

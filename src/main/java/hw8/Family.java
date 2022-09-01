@@ -1,8 +1,6 @@
 package hw8;
 
-
 import java.util.*;
-
 public class Family {
   Human mother;
   Human father;

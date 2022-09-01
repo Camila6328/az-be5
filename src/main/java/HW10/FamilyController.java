@@ -1,6 +1,4 @@
-package HW9;
-
-import hw8.Family;
+package HW10;
 
 public class FamilyController extends FamilyService {
     //FamilyController class must contain the same methods as those in the FamilyService.

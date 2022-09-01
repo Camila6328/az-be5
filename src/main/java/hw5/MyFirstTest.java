@@ -14,7 +14,7 @@ public class MyFirstTest {
     Human child3 = new Human("Turana", "Garayeva",1989,45,sc);
     Pet pet = new Pet(Pet.Species.dog,"Maestro",1,30, new String[]{"eat", "drink", "sleep"});
 
-    Family fm = new Family(father,mother,pet);
+    Family fm = new Family(father,mother);
 
         @Test
         public void firstTest() {
@@ -35,8 +35,8 @@ public class MyFirstTest {
                 String name = h.getName();
                 //   System.out.println(name);
             }
-            h.finalize();
-
+        //    h.finalize();
             Assert.assertTrue(fm.equals(fm));
+
         }
 }

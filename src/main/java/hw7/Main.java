@@ -37,7 +37,6 @@ public class Main {
         Woman w = new Woman("Jamila","Garayev",45);
         System.out.println("I'm woman: " + w.name + " " + w.surname);
 
-
         // task with advanced complexity
         Family fm = new Family();
         System.out.println(fm);

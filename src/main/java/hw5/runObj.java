@@ -1,8 +1,8 @@
 package hw5;
 
-public class runObj {
+public class runObj extends Pet{
     // Driver Code
-    public static void main(String[] args) {
+    public void main(String[] args) {
         String[][] sc = new String[][]{{Human.DayOfWeek.Sunday.name(),"w1"}, {Human.DayOfWeek.Monday.name(),"w2"},
                 {Human.DayOfWeek.Tuesday.name(),"w3"},{Human.DayOfWeek.Wednesday.name(),"w4"},
                 {Human.DayOfWeek.Thursday.name(),"w5"},{Human.DayOfWeek.Friday.name(),"w6"},{Human.DayOfWeek.Saturday.name(),"w7"}};

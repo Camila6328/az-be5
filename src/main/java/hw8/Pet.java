@@ -2,7 +2,7 @@ package hw8;
 
 import java.util.Set;
 public class Pet {
-    enum Species {
+    public enum Species {
         dog(false, 4, true),
         cat(false, 4, true),
         bird(true, 2, false),
