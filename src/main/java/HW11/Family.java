@@ -1,6 +1,6 @@
-package HW10;
-
-import java.util.*;
+package HW11;
+import java.util.Arrays;
+import java.util.Set;
 
 public class Family {
   Human mother;
@@ -14,15 +14,14 @@ public class Family {
     this.children = children;
   }
 
-
-  public Family(Human mother, Human father,Human[] children,Set<Pet> pet) { //
+  public Family(Human mother, Human father, Human[] children, Set<Pet> pet) { //
     this.mother = mother;
     this.father = father;
     this.children = children;
     this.pet = pet;
   }
 
-  public Family(Human mother, Human father,Set<Pet>pet) { //
+  public Family(Human mother, Human father, Set<Pet>pet) { //
     this.mother = mother;
     this.father = father;
     this.pet = pet;
@@ -61,5 +60,23 @@ public class Family {
 
   public void setChildren(Human[] children) {
     this.children = children;
+  }
+
+  public boolean deleteChild(Human child1){
+    Human[] arr = this.children;
+    if (arr == null ||  this.children.length < 0 || this.children.length > arr.length){
+      return false;
+    }
+    Human[] anotherArray = new Human[arr.length - 1];
+
+    for (int i = 0, k = 0; i < anotherArray.length; i++) {
+      if (arr.hashCode()== child1.hashCode()) {
+        System.out.println("sucsess");
+        continue;
+      }
+      anotherArray[k++] = arr[i];
+    }
+    this.children = anotherArray;
+    return true;
   }
 }

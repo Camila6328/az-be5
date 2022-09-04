@@ -4,7 +4,7 @@ import java.util.Map;
 
 public interface FamilyDao {
     //getAllFamilies - returns an indexed list of all families (List).
-    List getAllFamilies(List<Family>ls_fm);
+    List<Family> getAllFamilies(List<Family>ls_fm);
     //getFamilyByIndex (accepts the family index from general list) - returns the family by the specified index. In case you have requested an element with a non-existent index, return null.
     Family getFamilyByIndex(int i_ls_fm,List<Family> ls_fm);
     //deleteFamily (accepts the index) - deletes family with a specified index, if such an index exists;
@@ -15,7 +15,7 @@ public interface FamilyDao {
     //saveFamily (accepts the Family type) - updates an existing family in Database if if that one already exists, saves at the end of the list - if not.
     boolean saveFamily(Family fm,List<Family> ls_fm);
     //displayAllFamilies - to put all the families on the screen (in the indexed list) with all the family members.
-    List displayAllFamilies(List<Family>ls_fm);
+    List displayAllFamilies(List<Family> ls_fm);
     //getFamiliesBiggerThan - to find family with number of people more than (takes the number of people and returns all families where the number of people is greater than specified);displays the information on the screen.
     List<Family> getFamiliesBiggerThan(List<Family>ls_fm, int cnt);
     //getFamiliesLessThan - to find family with number of people less than (takes the number of people and returns all families where the number of people is less than specified); выводит информацию на экран.

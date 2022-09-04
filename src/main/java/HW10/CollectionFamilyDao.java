@@ -45,10 +45,10 @@ public class CollectionFamilyDao implements FamilyDao {
     }
     @Override
     public boolean countFamiliesWithMemberNumber(List<Family> ls_fm) {
-            for (Family fm : ls_fm) {
-                if (ls_fm.size() == fm.children.length) {return true;}
-                }
-            return false;
+        for (Family fm : ls_fm) {
+            if (fm.getFamilySize() == fm.children.length) {return true;}
+        }
+        return false;
     }
     //getFamiliesBiggerThan - to find family with number of people more than (takes the number of people and returns all families where the number of people is greater than specified);displays the information on the screen.
     @Override
@@ -84,10 +84,10 @@ public class CollectionFamilyDao implements FamilyDao {
     }
     @Override
     public boolean deleteFamilyByIndex(int ind_family,List<Family>ls_fm) {
-       // List<Family>del_ls_fm = new ArrayList<Family>();
+        // List<Family>del_ls_fm = new ArrayList<Family>();
         if(!ls_fm.isEmpty() && ls_fm.size()>ind_family){
             ls_fm.remove(ind_family);
-        return true;
+            return true;
         }
         return false;
     }

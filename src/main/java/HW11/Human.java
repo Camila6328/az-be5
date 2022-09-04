@@ -1,5 +1,7 @@
-package HW10;
+package HW11;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Map;
 import java.util.TimeZone;
@@ -34,7 +36,7 @@ public class Human {
         this.surname = surname;//"undefined surname";
         this.bDate = java_date;
     }
-    public Human(String name, String surname, String birthDate,int iq) {
+    public Human(String name, String surname, String birthDate, int iq) {
         this.name = name; //"undefined name";
         this.surname = surname;//"undefined surname";
         this.bDate=birthDate;
@@ -43,8 +45,6 @@ public class Human {
 
     @Override
     public String toString() {
-
-
         return "Human{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
@@ -65,5 +65,23 @@ public class Human {
         return nv;
     }
 
+    public long getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(long birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public int getAge(long birthDate){
+
+        Date dataTime =  new Date(birthDate*1000L);
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/YYYY");
+        df.setTimeZone(TimeZone.getTimeZone("GMT-4"));
+        String bYear = new SimpleDateFormat("YYYY").format(dataTime);
+        String cYear = new SimpleDateFormat("YYYY").format(new Date().getTime());
+    return (int) Integer.parseInt(cYear)- Integer.parseInt(bYear);
+        // return 1;
+    }
 
 }
