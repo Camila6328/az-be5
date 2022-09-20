@@ -9,12 +9,10 @@ import java.util.List;
 
 public class Flights  implements Serializable {
     int flightId; //serial number of flight
-    String  toCity;
+    String toCity;
     String dateFrom;
     String timeFrom;
     int avblTicketCnt;
-
-    // Calendar cdr = Calendar.getInstance();
     public Flights() {};
     public Flights(int flightId, String toCity, String dateFrom, String timeFrom,int avblTicketCnt) throws ParseException {
         SimpleDateFormat frm1 = new SimpleDateFormat("dd.MM.yyyy");
@@ -35,7 +33,7 @@ public class Flights  implements Serializable {
                 ", toCity='" + toCity + '\'' +
                 ", dateFrom='" + dateFrom + '\'' +
                 ", dateTime ='" + timeFrom + '\'' +
-                ", avblTicketCnt=" +  avblTicketCnt +
+                ", avblTicketCnt=" + avblTicketCnt +
                 '}';
     }
 

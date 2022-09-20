@@ -7,9 +7,9 @@ public interface FlightAppInt {
     public void saveFlight(Flights flight);
     public List<Flights> getAllFlights();
     public Optional<Flights> findFlight(int flightId); //searching and booking plane tickets //Optional<Flights>
-    public List<Flights>findFlights(String toCity,String fromDate,int passCnt);
+    public List<Flights>findFlight(String toCity,String fromDate,int passCnt);
     public String chooseFlight(int flightId);
-
+    public void deleteFlight(int flightId);
     public int findFlightAvbCnt(int flightId);
 
 }

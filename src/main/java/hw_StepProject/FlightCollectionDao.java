@@ -1,10 +1,13 @@
 package hw_StepProject;
 
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class FlightCollectionDao implements FlightAppInt {//extends AppData
+    Charset charset = StandardCharsets.UTF_8;
     File file;
     public FlightCollectionDao(File file) {
         this.file = file;
@@ -43,11 +46,10 @@ public class FlightCollectionDao implements FlightAppInt {//extends AppData
     }
     @Override
     public Optional<Flights> findFlight(int flightId) {
-
         return getAllFlights().stream().filter(s -> s.getFlightId() == flightId).findFirst();
     }
     @Override
-    public List<Flights>findFlights(String toCity, String fromDate, int passCnt) {
+    public List<Flights>findFlight(String toCity, String fromDate, int passCnt) {
       return getAllFlights().stream()
                 .filter(
                         f->(f.getToCity().toLowerCase().equals(toCity.toLowerCase())
@@ -67,10 +69,13 @@ public class FlightCollectionDao implements FlightAppInt {//extends AppData
         if (findFlight(flightId).stream().findFirst().isPresent()) {
             return findFlight(flightId).stream().findFirst().toString();
        } else if (flightId==0) {
-
-
         }
         return "Please Enter available flight ID: ";
+    }
+    @Override
+    public void deleteFlight(int flightId) {
+        List<Flights> flights = getAllFlights().stream().filter(f -> f.getFlightId() != flightId).collect(Collectors.toList());
+        write(flights);
     }
 
 }

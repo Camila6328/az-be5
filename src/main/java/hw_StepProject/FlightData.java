@@ -7,7 +7,6 @@ public class FlightData extends FlightService {
     public FlightData(FlightCollectionDao acd) {
         super(acd);
     }
-
     public void AppDatagenerate() throws ParseException {
         Flights fl = new Flights(1244,"Baku","03.02.2023", "12:20",130);
         Flights fl2 = new Flights(1235, "Ganja", "05.02.2023", "14:20",100);

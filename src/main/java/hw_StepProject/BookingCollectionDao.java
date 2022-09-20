@@ -1,37 +1,30 @@
 package hw_StepProject;
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
-
 public class BookingCollectionDao extends FlightCollectionDao implements BookingAppInt
-{
-    public BookingCollectionDao(File file) {
+{ public BookingCollectionDao(File file) {
         super(file);
     }
-    FlightCollectionDao appC = new FlightCollectionDao(file);
     @Override
-    public Map<String,Flights> getMyFlights(String fullName) {
+    public List<Flights> getMyFlights(String fullName) {
         try (FileInputStream fs = new FileInputStream(file);
              BufferedInputStream bs = new BufferedInputStream(fs);
              ObjectInputStream os = new ObjectInputStream(bs);
         )
         {   Object flights = os.readObject();
-            Map myFlights = new HashMap<>();
-            myFlights.put(fullName,flights);
-           // List<Flights> allFlights = (ArrayList<Flights>) flights;
-            return myFlights;
+            List<Flights> allBookings = (ArrayList<Flights>) flights;
+            return allBookings;
         }
         catch (IOException | ClassNotFoundException ex) {
-            return new HashMap<>();
+            return new ArrayList<>();
         }
     }
     @Override
     public void saveBooking(Flights flight, String fullName) {
-        Map<String, Flights> mapFlights = getMyFlights(fullName);
-            mapFlights.put(fullName,flight);
-            write(mapFlights);
+        List<Flights>flights = getMyFlights(fullName);
+        flights.add(flight);
+        write(flights);
+
         }
         public void write(Map<String, Flights> mapFlights) {
             try (FileOutputStream fs = new FileOutputStream(file);
@@ -44,17 +37,7 @@ public class BookingCollectionDao extends FlightCollectionDao implements Booking
                 System.out.println(ex.getMessage());
             }
     }
-    public String pathFlight = "//Users/jamilagara/flights.txt";
-    @Override
-    public String bookingFlight(int flightId, String name, String surname) throws IOException {
-   //     getAllFlights().stream().filter(f->f.flightId==flightId).
-      //  Flights flight = new Flights();
 
-       // saveBooking(appC.findFlight(flightId).get(),name + " " + surname);
-     //   Path path = Paths.get("flights.txt");
-    // findFlightAvbCnt(flightId);
-     //   Files.lines(path).filter(line -> line.contains("5")).findFirst().map(line-> line.replaceAll("5", "4"));
-        return "1";//appC.findFlight(flightId).toString()
-    }
+
 
 }
