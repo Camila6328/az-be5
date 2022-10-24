@@ -2,7 +2,6 @@ package TinderProject;
 
 import TinderProject.DAO.LikesDAO;
 import TinderProject.DAO.UsersDAO;
-import TinderProject.Objects.Likes;
 import TinderProject.Objects.User;
 import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
@@ -17,7 +16,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -51,12 +49,15 @@ public class PeopleListTest extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
         var usersCon = config("TestStepProject.ftl",rs);
-        likedUsers.add(usersCon.get(c.get()));
-        Likes likeduser = new Likes(likedUsers.get(c.get()).getId(),likedUsers.get(c.get()).getUsername(),
-                "yes","no",new Date());
-        ld.put(likeduser);
+        int ind = c.get();
+        likedUsers.add(usersCon.get(ind));
 
+//        Likes liked = new Likes(likedUsers.get(c.get()).getId(),likedUsers.get(ind).getUsername(),
+//                "yes",likedUsers.get(ind).getImg(),"no",new Date());
+//
+//        ld.put(liked);
     }
+
     private List<User> config(String fileName,HttpServletResponse rs) throws ServletException, IOException {
         Configuration conf = new Configuration(Configuration.VERSION_2_3_28);
         conf.setDefaultEncoding(String.valueOf(StandardCharsets.UTF_8));
@@ -73,15 +74,15 @@ public class PeopleListTest extends HttpServlet {
             data.put("photo", users.get(ind).getImg());
             if (ud.getCount() == newUsers.size()){
                 rs.sendRedirect("http://localhost:8080/liked");
-          // w.println("ssss");
+           w.println("ssss");
             }
             else {
                 newUsers.add(users.get(ind));
-              // w.println(ud.getCount() + " " +(newUsers.size()) +" " + users.get(ind).getUsername() + " " );
+               // w.println(ud.getCount() + " " +(newUsers.size()) +" " + users.get(ind).getUsername() + " " );
                conf.getTemplate(fileName).process(data, w);
             }
 
-        } catch (TemplateException e) {
+    } catch (TemplateException e) {
             throw new RuntimeException(e);
         }
         return users;

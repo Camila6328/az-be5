@@ -13,7 +13,7 @@ import java.util.List;
 public class ChatServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
-        String fileName = getClass().getClassLoader().getResource("chat.html").getFile();
+        String fileName = getClass().getClassLoader().getResource("TinderProject/chat.html").getFile();
 
         List<String> lines = Files.readAllLines(Path.of(fileName));
         try (PrintWriter w = rs.getWriter()){
