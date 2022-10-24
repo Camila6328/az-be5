@@ -29,15 +29,17 @@ public class LikedPeopleListTest extends HttpServlet {
 
         HashMap<String, Object> data = new HashMap<>();
         LikesDAO ld = new LikesDAO(conn);
-        try (PrintWriter w = rs.getWriter()) {
 
+
+
+        try (PrintWriter w = rs.getWriter()) {
             for (int i = 0; i < likedUsers.size(); i++) {
                 data.put("name", likedUsers.get(i).getUsername());
                 data.put("photo", likedUsers.get(i).getImg());
                 conf.getTemplate("formLiked.ftl").process(data, w);
 
-            }
 
+            }
         } catch (TemplateException e) {
             throw new RuntimeException(e);
         }
