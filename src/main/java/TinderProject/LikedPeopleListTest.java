@@ -1,6 +1,6 @@
 package TinderProject;
 
-import TinderProject.DAO.UsersDAO;
+import TinderProject.DAO.LikesDAO;
 import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
 import lombok.SneakyThrows;
@@ -19,8 +19,6 @@ import static TinderProject.DAO.UsersDAO.likedUsers;
 import static TinderProject.Database.ConnectionDB.conn;
 
 public class LikedPeopleListTest extends HttpServlet {
-    UsersDAO ud = new UsersDAO(conn);
-
     @SneakyThrows
     @Override
     protected void doGet(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
@@ -32,10 +30,12 @@ public class LikedPeopleListTest extends HttpServlet {
         HashMap<String, Object> data = new HashMap<>();
 
         try (PrintWriter w = rs.getWriter()) {
+
             for (int i = 0; i < likedUsers.size(); i++) {
                 data.put("name", likedUsers.get(i).getUsername());
                 data.put("photo", likedUsers.get(i).getImg());
-                conf.getTemplate("TestStepProject.ftl").process(data, w);
+                conf.getTemplate("formLiked.ftl").process(data, w);
+
             }
 
         } catch (TemplateException e) {
