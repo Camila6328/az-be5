@@ -1,6 +1,7 @@
 package tinderProject.DAO;
 
 import lombok.SneakyThrows;
+import tinderProject.Objects.Likes;
 
 import java.sql.Connection;
 import java.sql.Date;
