@@ -5,7 +5,6 @@ import freemarker.template.TemplateException;
 import lombok.SneakyThrows;
 import tinderProject.DAO.LikesDAO;
 import tinderProject.DAO.UsersDAO;
-import tinderProject.Objects.Likes;
 import tinderProject.Objects.User;
 
 import javax.servlet.ServletException;
