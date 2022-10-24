@@ -1,4 +1,4 @@
-package TinderProject;
+package tinderProject;
 
 public class Counter {
   private int x;

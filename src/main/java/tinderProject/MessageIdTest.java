@@ -1,9 +1,9 @@
-package TinderProject;
+package tinderProject;
 
-import TinderProject.DAO.LikesDAO;
 import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
 import lombok.SneakyThrows;
+import tinderProject.DAO.LikesDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 
-import static TinderProject.Database.ConnectionDB.conn;
+import static tinderProject.Database.ConnectionDB.conn;
 
 public class MessageIdTest extends HttpServlet {
     @SneakyThrows
