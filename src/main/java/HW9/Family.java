@@ -8,13 +8,6 @@ public class Family {
   Human[] children=new Human[]{};//1
   Set<Pet> pet;
 
-  public Family(Human mother, Human father, Human[] children) { //
-    this.mother = mother;
-    this.father = father;
-    this.children = children;
-  }
-
-
   public Family(Human mother, Human father,Human[] children,Set<Pet> pet) { //
     this.mother = mother;
     this.father = father;
@@ -32,7 +25,14 @@ public class Family {
     this.mother = mother;
     this.father = father;
   }
-  @Override
+
+  public Family(Human mother, Human father,Human[] children) { //
+    this.mother = mother;
+    this.father = father;
+    this.children = children;
+  }
+
+    @Override
   public String toString() {
     return "Family{" +
             "mother=" + mother + "\n"+

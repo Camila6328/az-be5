@@ -42,7 +42,8 @@ public class RunObjectstestUnit {
         System.out.println(father3);
         System.out.println(father3.describeAge(1220227200));
         System.out.println(father4);
-           CollectionFamilyDao s = new CollectionFamilyDao();
+        CollectionFamilyDao s = new CollectionFamilyDao();
+
  //   Family fm1 = new Family(mother1, father1,new Human[]{});
        System.out.println(s.getAllFamilies(ls_fm));
 //        System.out.println(s.getFamilyByIndex(2,s.getAllFamilies(ls_fm)));

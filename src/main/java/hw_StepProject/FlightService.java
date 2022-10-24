@@ -10,8 +10,8 @@ public class FlightService {
         this.acd = acd;
     }
     public FlightService(){};
-    public static String pathFlight = "//Users/jamilagara/flights.txt";
-    public static String pathBooking = "//Users/jamilagara/booking.txt";
+    public static String pathFlight = "//User/jamilagara/flights.txt";
+    public static String pathBooking = "//User/jamilagara/booking.txt";
     static File fileFlight = new File(pathFlight);
     static File fileBooking = new File(pathBooking);
     static FlightCollectionDao appC = new FlightCollectionDao(fileFlight);

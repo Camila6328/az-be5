@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
 public class Main {
     public static String gBoy = "boy";
     public static String gGirl = "girl";
-    public static String path = "//Users/jamilagara/test.txt";
-    //Users/jamilagara/PycharmProjects/homeWork
+    public static String path = "//User/jamilagara/test.txt";
+    //User/jamilagara/PycharmProjects/homeWork
 
     public static void main(String[] args) throws ParseException, IOException {
         List<Family> families = new ArrayList<>();

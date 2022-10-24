@@ -10,7 +10,8 @@ public class Counter {
     x++;
   }
 
-  int get() {
+  public int get() {
     return x;
   }
+
 }

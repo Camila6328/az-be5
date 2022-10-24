@@ -11,12 +11,14 @@ public class MavenApp {
         ServletContextHandler handler = new ServletContextHandler();
         Counter counter = new Counter();
 
-
-
         UserNameButtonServlet userNameButtonServlet =  new UserNameButtonServlet(counter);
-        handler.addServlet( new ServletHolder(userNameButtonServlet),"/users");
 
+        handler.addServlet(new ServletHolder(userNameButtonServlet),"/users");
         handler.addServlet(new ServletHolder(new LikedUserServlet()),"/liked");
+
+        handler.addServlet(new ServletHolder(new LoginPageServlet()), "/login");
+
+        //handler.addServlet(new ServletHolder(new LikedUserServlet()),"/messages/{id}");
 
 
         server.setHandler(handler);
